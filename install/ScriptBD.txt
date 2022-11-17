@@ -1,0 +1,172 @@
+-- BASE DE DATOS
+--
+-- --------------------------------------------------------
+--
+-- Estructura de tabla para la tabla `accesorios`
+--
+CREATE TABLE `accesorios` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `id_clasificacion` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+--
+-- Estructura de tabla para la tabla `clasificacion`
+--
+CREATE TABLE `clasificacion` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `clase_hija` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+--
+-- Estructura de tabla para la tabla `comentarios`
+--
+CREATE TABLE `comentarios` (
+  `id` int(11) NOT NULL,
+  `texto` text COLLATE utf8_spanish_ci NOT NULL,
+  `nombre` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `calificacion` float NOT NULL,
+  `id_producto` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+--
+-- Estructura de tabla para la tabla `productos`
+--
+CREATE TABLE `productos` (
+  `id` int(11) NOT NULL,
+  `modelo` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `especificaciones` text COLLATE utf8_spanish_ci NOT NULL,
+  `precio` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+ALTER TABLE `productos` ADD `vistas` INT NOT NULL AFTER `precio`;
+
+--
+-- campos requeridos para el archivo de configuracion nivel basico
+--
+ALTER TABLE `productos` ADD `marca` VARCHAR(30) NOT NULL AFTER `vistas`, ADD `foto` VARCHAR(30) NOT NULL AFTER `marca`;
+
+
+-- -------------------------------------------------------
+-- tabla para asociar la tabla clasificacion (categorias) con productos
+-- comunicaion con la base de datos Avanzado (1)
+--
+CREATE TABLE `categoria_producto` (
+ `id_clasificacion` int(11) NOT NULL,
+ `id_producto` int(11) NOT NULL
+);
+
+-- --------------------------------------------------------
+--
+-- Índices
+--
+--
+-- Indices de la tabla `accesorios`
+--
+ALTER TABLE `accesorios`
+  ADD PRIMARY KEY (`id`);
+--
+-- Indices de la tabla `clasificacion`
+--
+ALTER TABLE `clasificacion`
+  ADD PRIMARY KEY (`id`);
+--
+-- Indices de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id`);
+--
+-- Indices de la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`id`);
+
+-- ------------------------------------------------
+-- AUTO INCERMENTOS
+--
+-- AUTO_INCREMENT de la tabla `accesorios`
+--
+ALTER TABLE `accesorios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `clasificacion`
+--
+ALTER TABLE `clasificacion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+-- --------------------------------------------------
+--
+-- INSERT DE DATOS DE LAS TABLAS PRODUCTOS CLASIFICACION COMENTARIOS
+--
+
+INSERT INTO productos (modelo, especificaciones, precio, vistas, marca, foto) VALUES ('3070-Ti','Tarjeta de Video Zotac GeForce RTX Trinity, 8GB 256-bit GDDR6X, PCI Express x16 4.0','10000','6','NVIDIA','1.jpg');
+INSERT INTO productos (modelo, especificaciones, precio, vistas, marca, foto) VALUES ('7600X','Procesador Ryzen 5 7600X, S-AM5, 4.70GHz, Six-Core, 32MB L3 Cache','20000','8','AMD','2.jpg');
+INSERT INTO productos (modelo, especificaciones, precio, vistas, marca, foto) VALUES ('Libero Elite','Laptop Libero Elite 14.1 Full HD, Intel Core i3-10110U 2.10GHz, 8GB, 256GB SSD, Windows 10 Home 64-bit, Español, Gris','30000','13','Ghia','3.jpg');
+INSERT INTO productos (modelo, especificaciones, precio, vistas, marca, foto) VALUES ('P2451FA','Laptop ExpertBook P2451FA 14 HD, Intel Core i3-10110U 2.10GHz, 8GB, 256GB SSD, Windows 10 Pro 64-bit, Español, Negro','40000','11','ASUS','4.jpg');
+INSERT INTO productos (modelo, especificaciones, precio, vistas, marca, foto) VALUES ('TD2430','Monitor LED Touch 23.6, Full HD, Widescreen, HDMI, Bocinas Integradas (2 x 2.5W), Negro','50000','6','HP','5.jpg');
+INSERT INTO productos (modelo, especificaciones, precio, vistas, marca, foto) VALUES ('Xenia','Laptop Gamer 14 Full HD, Intel Core i5-1135G7 2.40GHz, 16GB, 512GB SSD, Windows 10 Home 64-bit, Español, Negro','60000','12','Lenovo','6.jpg');
+INSERT INTO productos (modelo, especificaciones, precio, vistas, marca, foto) VALUES ('DE254','Tarjeta Madre ATX ROG STRIX GAMING WI-FI, S-AM4, AMD B550, HDMI, max. 128GB DDR4 para AMD','25000','5','Grizzly','7.jpg');
+INSERT INTO productos (modelo, especificaciones, precio, vistas, marca, foto) VALUES ('258E','Tarjeta de Video Zotac GeForce RTX, 8GB 256-bit GDDR6X, PCI Express x16 4.0','35000','7','Intel','8.jpg');
+INSERT INTO productos (modelo, especificaciones, precio, vistas, marca, foto) VALUES ('XD01','Computadora Gamer, AMD Ryzen 5 5600G 3.90GHz, 16GB, 480GB SSD, Windows 10 Prueba','45000','6','ViewSonic','9.jpg');
+INSERT INTO productos (modelo, especificaciones, precio, vistas, marca, foto) VALUES ('R-elite','Silla Gamer Chariot RGB, hasta 150Kg, Negro/Rojo','55000','14','Xtreem','10.jpg');
+
+INSERT INTO comentarios (texto, nombre, calificacion, id_producto) VALUES ('La cantidad de personajes puede variar, y estos pueden ser principales, si llevan adelante los acontecimientos, o secundarios, si tienen menor influencia en el desarrollo de los hechos.','juan','1','5');
+INSERT INTO comentarios (texto, nombre, calificacion, id_producto) VALUES ('Tiene un fin específico, que puede ser contar una historia, entretener al lector, enseñarle algo o informar sobre algún acontecimiento, entre muchos otros.','jose','2','7');
+INSERT INTO comentarios (texto, nombre, calificacion, id_producto) VALUES ('Cuentan con una estructura interna y una externa, que depende del género de que se trate','maria','3','1');
+INSERT INTO comentarios (texto, nombre, calificacion, id_producto) VALUES ('La Revolucion Francesa y la llegada de la edad contemporanea','mario','4','2');
+INSERT INTO comentarios (texto, nombre, calificacion, id_producto) VALUES ('Las puse con un Ryzen 5600 y van supergenial, y el RGB una delicia, para activar los 3200 hay que meterse a BIOS, muy fácil y si no busca algún video en YouTube, es muy sencillo.','nadia','5','2');
+INSERT INTO comentarios (texto, nombre, calificacion, id_producto) VALUES ('No funcionan tan perfecto en todos los ensambles, en el mío no se pueden reconocer a los 3200Mhz, debo establecer una frecuencia menor o el problema vuelve','victor','6','1');
+INSERT INTO comentarios (texto, nombre, calificacion, id_producto) VALUES ('Sin duda este producto hará que tu computadora mejore el rendimiento enormemente, 32 GB de RAM son suficientes para jugar, ejecutar programas exigentes y par muchas cosas mas, su RGB se ve fenomenal y el diseño. Muy recomendado para gamers','david','7','8');
+INSERT INTO comentarios (texto, nombre, calificacion, id_producto) VALUES ('Sin comentarios','monica','8','6');
+INSERT INTO comentarios (texto, nombre, calificacion, id_producto) VALUES ('trata de un texto periodístico que respeta el orden temporal de los hechos con el objetivo de contar una historia real, para lo cual se suelen utilizar diversos recursos literarios','claudia','9','4');
+INSERT INTO comentarios (texto, nombre, calificacion, id_producto) VALUES ('Por otra parte, hay personajes principales y secundarios. De igual modo, hay narradores en primera, segunda o tercera persona','alberto','10','4');
+
+INSERT INTO `clasificacion` (`nombre`, `clase_hija`) VALUES ('portatiles', 0);
+INSERT INTO `clasificacion` (`nombre`, `clase_hija`) VALUES ('escritorio', 0);
+INSERT INTO `clasificacion` (`nombre`, `clase_hija`) VALUES ('pantallas', 2);
+INSERT INTO `clasificacion` (`nombre`, `clase_hija`) VALUES ('ratones', 2);
+INSERT INTO `clasificacion` (`nombre`, `clase_hija`) VALUES ('teclados', 2);
+INSERT INTO `clasificacion` (`nombre`, `clase_hija`) VALUES ('reguladores', 0);
+INSERT INTO `clasificacion` (`nombre`, `clase_hija`) VALUES ('almacenamiento', 0);
+INSERT INTO `clasificacion` (`nombre`, `clase_hija`) VALUES ('hdd', 7);
+INSERT INTO `clasificacion` (`nombre`, `clase_hija`) VALUES ('ssd', 7);
+INSERT INTO `clasificacion` (`nombre`, `clase_hija`) VALUES ('memorias usb', 7);
+
+-- --------------------------------------------------------
+-- vistas
+-- intermedio (2)
+--
+CREATE VIEW promedios AS
+select (SELECT CONCAT(p.marca,' ', p.modelo) FROM productos p WHERE p.id = c.id_producto) as producto, 
+c.texto as comentario, 
+ROUND(AVG(c.calificacion),2) as promedio 
+from comentarios c GROUP by c.id_producto ORDER by AVG(c.calificacion) desc;
+
+-- --------------------------------------------------------
+-- Procedimiento almacenado avanzado (2)
+--
+delimiter //
+CREATE PROCEDURE mensualidades ()
+BEGIN
+ select modelo, precio, 
+ ROUND((((precio * (10/12))/2)/12),2) as 6mese, 
+ ROUND(((precio * (10/12))/12),2) as 12meses 
+ from productos;
+END //
+
+CALL `mensualidades`();

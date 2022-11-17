@@ -1,0 +1,42 @@
+[
+{"productos":
+[
+    {"marca":"NVIDIA","modelo":"3070-Ti","precio":"10000","foto":"1.jpg","vistas":"6","especificaciones":"Tarjeta de Video Zotac GeForce RTX Trinity, 8GB 256-bit GDDR6X, PCI Express x16 4.0"},
+    {"marca":"AMD","modelo":"7600X","precio":"20000","foto":"2.jpg","vistas":"8","especificaciones":"Procesador Ryzen 5 7600X, S-AM5, 4.70GHz, Six-Core, 32MB L3 Cache"},
+    {"marca":"Ghia","modelo":"Libero Elite","precio":"30000","foto":"3.jpg","vistas":"3","especificaciones":"Laptop Libero Elite 14.1 Full HD, Intel Core i3-10110U 2.10GHz, 8GB, 256GB SSD, Windows 10 Home 64-bit, Español, Gris"},
+    {"marca":"ASUS","modelo":"P2451FA","precio":"40000","foto":"4.jpg","vistas":"1","especificaciones":"Laptop ExpertBook P2451FA 14 HD, Intel Core i3-10110U 2.10GHz, 8GB, 256GB SSD, Windows 10 Pro 64-bit, Español, Negro"},
+    {"marca":"HP","modelo":"TD2430","precio":"50000","foto":"5.jpg","vistas":"6","especificaciones":"Monitor LED Touch 23.6, Full HD, Widescreen, HDMI, Bocinas Integradas (2 x 2.5W), Negro"},
+    {"marca":"Lenovo","modelo":"Xenia","precio":"60000","foto":"6.jpg","vistas":"2","especificaciones":"Laptop Gamer 14 Full HD, Intel Core i5-1135G7 2.40GHz, 16GB, 512GB SSD, Windows 10 Home 64-bit, Español, Negro"},
+    {"marca":"Grizzly","modelo":"DE254","precio":"25000","foto":"7.jpg","vistas":"5","especificaciones":"Tarjeta Madre ATX ROG STRIX GAMING WI-FI, S-AM4, AMD B550, HDMI, max. 128GB DDR4 para AMD"},
+    {"marca":"Intel","modelo":"258E","precio":"35000","foto":"8.jpg","vistas":"7","especificaciones":"Tarjeta de Video Zotac GeForce RTX, 8GB 256-bit GDDR6X, PCI Express x16 4.0"},
+    {"marca":"ViewSonic","modelo":"XD01","precio":"45000","foto":"9.jpg","vistas":"6","especificaciones":"Computadora Gamer, AMD Ryzen 5 5600G 3.90GHz, 16GB, 480GB SSD, Windows 10 Prueba"},
+    {"marca":"Xtreem","modelo":"R-elite","precio":"55000","foto":"10.jpg","vistas":"4","especificaciones":"Silla Gamer Chariot RGB, hasta 150Kg, Negro/Rojo"}
+],
+"comentarios":
+[
+    {"calificacion":"1","id_producto":"5","nombre":"juan","texto":"La cantidad de personajes puede variar, y estos pueden ser principales, si llevan adelante los acontecimientos, o secundarios, si tienen menor influencia en el desarrollo de los hechos."},
+    {"calificacion":"2","id_producto":"7","nombre":"jose","texto":"Tiene un fin específico, que puede ser contar una historia, entretener al lector, enseñarle algo o informar sobre algún acontecimiento, entre muchos otros."},
+    {"calificacion":"3","id_producto":"1","nombre":"maria","texto":"Cuentan con una estructura interna y una externa, que depende del género de que se trate"},
+    {"calificacion":"4","id_producto":"2","nombre":"mario","texto":"La Revolucion Francesa y la llegada de la edad contemporanea"},
+    {"calificacion":"5","id_producto":"2","nombre":"nadia","texto":"Las puse con un Ryzen 5600 y van supergenial, y el RGB una delicia, para activar los 3200 hay que meterse a BIOS, muy fácil y si no busca algún video en YouTube, es muy sencillo."},
+    {"calificacion":"6","id_producto":"1","nombre":"victor","texto":"No funcionan tan perfecto en todos los ensambles, en el mío no se pueden reconocer a los 3200Mhz, debo establecer una frecuencia menor o el problema vuelve"},
+    {"calificacion":"7","id_producto":"3","nombre":"david","texto":"Sin duda este producto hará que tu computadora mejore el rendimiento enormemente, 32 GB de RAM son suficientes para jugar, ejecutar programas exigentes y par muchas cosas mas, su RGB se ve fenomenal y el diseño. Muy recomendado para gamers"},
+    {"calificacion":"5","id_producto":"6","nombre":"monica","texto":"Sin comentarios"},
+    {"calificacion":"7","id_producto":"4","nombre":"claudia","texto":"trata de un texto periodístico que respeta el orden temporal de los hechos con el objetivo de contar una historia real, para lo cual se suelen utilizar diversos recursos literarios"},
+    {"calificacion":"1","id_producto":"4","nombre":"alberto","texto":"Por otra parte, hay personajes principales y secundarios. De igual modo, hay narradores en primera, segunda o tercera persona"}
+],
+"clasificaciones":
+[
+    {"nombre":"portatiles","clase_hija":"0"},
+    {"nombre":"escritorio","clase_hija":"0"},
+    {"nombre":"pantallas","clase_hija":"2"},
+    {"nombre":"ratones","clase_hija":"2"},
+    {"nombre":"teclados","clase_hija":"2"},
+    {"nombre":"reguladores","clase_hija":"0"},
+    {"nombre":"almacenamiento","clase_hija":"0"},
+    {"nombre":"hdd","clase_hija":"7"},
+    {"nombre":"ssd","clase_hija":"7"},
+    {"nombre":"memorias usb","clase_hija":"7"}
+]
+}
+]
